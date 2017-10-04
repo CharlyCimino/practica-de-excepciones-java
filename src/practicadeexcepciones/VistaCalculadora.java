@@ -35,12 +35,20 @@ public class VistaCalculadora extends javax.swing.JFrame
         }
     }
     
-    public double obtenerPrimerValor() {
-        return Double.valueOf( this.jTextFieldNumero1.getText() );
+    public int obtenerPrimerValor() {
+        int valor = 0;
+        try {
+            valor = Integer.valueOf( this.jTextFieldNumero1.getText() );
+        }
+        catch (NumberFormatException nfe)
+        {
+            System.out.println("NO VALIDO");
+        }
+        return valor;
     }
     
-    public double obtenerSegundoValor() {
-        return Double.valueOf( this.jTextFieldNumero2.getText() );
+    public int obtenerSegundoValor() {
+        return Integer.valueOf( this.jTextFieldNumero2.getText() );
     }
     
     public int obtenerOperador() {
