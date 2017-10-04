@@ -9,10 +9,10 @@ public class Principal
         {
             public void run() 
             {
-//                ControladorCalculadora cc = new ControladorCalculadora();
-                ControladorSubte cs = new ControladorSubte();
-//                cc.iniciar();
-                cs.iniciar();
+                ControladorCalculadora cc = new ControladorCalculadora();
+//                ControladorSubte cs = new ControladorSubte();
+                cc.iniciar();
+//                cs.iniciar();
             }
         });
     }
