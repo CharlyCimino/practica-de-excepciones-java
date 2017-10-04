@@ -22,17 +22,17 @@ public class ControladorCalculadora
     }
     
     private void procesarResolucion() {
-        double primerNumero = this.v.obtenerPrimerValor();
-        double segundoNumero = this.v.obtenerSegundoValor();
+        int primerNumero = this.v.obtenerPrimerValor();
+        int segundoNumero = this.v.obtenerSegundoValor();
         int operador = this.v.obtenerOperador();
         
-        double resultado = resolver(primerNumero, segundoNumero, operador);
+        int resultado = resolver(primerNumero, segundoNumero, operador);
         
         this.v.mostrarResultado(resultado);
     }
     
-    private double resolver (double n1, double n2, int op) {
-        double res = 0;
+    private int resolver (int n1, int n2, int op) {
+        int res = 0;
         switch (op)
         {
             case 0: res = n1 + n2; break;
