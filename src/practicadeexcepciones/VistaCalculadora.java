@@ -4,6 +4,7 @@ package practicadeexcepciones;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class VistaCalculadora extends javax.swing.JFrame 
 {
@@ -36,11 +37,23 @@ public class VistaCalculadora extends javax.swing.JFrame
     }
     
     public double obtenerPrimerValor() {
-        return Double.valueOf( this.jTextFieldNumero1.getText() );
+        try {
+            return Double.valueOf( this.jTextFieldNumero1.getText() );
+        }
+        catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "El valor ingresado en el primer campo no representa un número", "Excepcion de tipo " + nfe, 0);
+        }
+        return 0;
     }
     
     public double obtenerSegundoValor() {
-        return Double.valueOf( this.jTextFieldNumero2.getText() );
+        try {
+            return Double.valueOf( this.jTextFieldNumero2.getText() );
+        }
+        catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "El valor ingresado en el segundo campo no representa un número", "Excepcion de tipo " + nfe, 0);
+        }
+        return 0;
     }
     
     public int obtenerOperador() {
