@@ -39,9 +39,15 @@ public class ControladorSubte
     
     private void actualizarEstacionEnPantalla(int sentido)
     {
-        estacionSeleccionada = v.obtenerIndiceEstacion() + sentido;
-        v.establecerIndiceEstacion( estacionSeleccionada );
-        v.establecerEstacion( lineas.get( lineaSeleccionada ).obtenerEstacion( estacionSeleccionada ) );
+        try {
+            estacionSeleccionada = v.obtenerIndiceEstacion() + sentido;
+            v.establecerIndiceEstacion( estacionSeleccionada );
+            v.establecerEstacion( lineas.get( lineaSeleccionada ).obtenerEstacion( estacionSeleccionada ) );
+        }
+        catch (ArrayIndexOutOfBoundsException aioobe) {
+            v.establecerEstacion("FUERA DE LIMITE");
+        }
+        
     }
     
     private class AnteriorHandler implements ActionListener
